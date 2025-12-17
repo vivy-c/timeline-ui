@@ -3,6 +3,7 @@ import type { GetServerSideProps } from "next";
 import { useCallback, useState } from "react";
 
 import { FeedColumn } from "@/components/timeline/FeedColumn";
+import { InfinityModal } from "@/components/timeline/InfinityModal";
 import { LeftRail } from "@/components/timeline/LeftRail";
 import { RightColumn } from "@/components/timeline/RightColumn";
 import { TopBar } from "@/components/timeline/TopBar";
@@ -23,6 +24,7 @@ export default function HomePage({ initial }: HomePageProps) {
   const [tab, setTab] = useState<FeedTab>(initial.feed.defaultTab);
   const [posts, setPosts] = useState(initial.feed.posts);
   const [tabLoading, setTabLoading] = useState(false);
+  const [showInfinity, setShowInfinity] = useState(true);
 
   const handleTabChange = useCallback(
     async (next: FeedTab) => {
@@ -84,6 +86,8 @@ export default function HomePage({ initial }: HomePageProps) {
               relatedPosts={initial.relatedPosts}
             />
           </main>
+
+          <InfinityModal open={showInfinity} onClose={() => setShowInfinity(false)} />
         </div>
       </div>
     </>
