@@ -94,6 +94,61 @@ export function IconChevronDown(props: IconProps) {
   );
 }
 
+export function IconChevronRight(props: IconProps) {
+  const { title, ...rest } = props;
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      {title ? <title>{title}</title> : null}
+      <path
+        d="m9 6 6 6-6 6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconExternalLink(props: IconProps) {
+  const { title, ...rest } = props;
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      {title ? <title>{title}</title> : null}
+      <path
+        d="M14 4h6v6"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M20 4 12.5 11.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M11 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function IconArrowLeft(props: IconProps) {
   const { title, ...rest } = props;
   return (
@@ -192,6 +247,59 @@ export function IconShare(props: IconProps) {
       />
       <path
         d="M10 7H7a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h7a3 3 0 0 0 3-3v-3"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function IconLightning(props: IconProps) {
+  const { title, ...rest } = props;
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      {title ? <title>{title}</title> : null}
+      <path
+        d="M13 3 6 13h6l-1 8 7-10h-6l1-8Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconCoin(props: IconProps) {
+  const { title, ...rest } = props;
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      {title ? <title>{title}</title> : null}
+      <circle
+        cx="12"
+        cy="12"
+        r="8"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+      <path
+        d="M12 7v10"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M9 9.5C9.6 8.6 10.7 8 12 8c1.9 0 3 .9 3 2.4 0 1.2-.7 1.8-2.2 2.2l-1.7.5c-1.3.4-2.1 1-2.1 2.1 0 1.6 1.2 2.3 3 2.3 1.3 0 2.4-.5 3-1.4"
         stroke="currentColor"
         strokeWidth="1.6"
         strokeLinecap="round"
@@ -299,6 +407,32 @@ export function IconUser(props: IconProps) {
         stroke="currentColor"
         strokeWidth="1.6"
         strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function IconSettings(props: IconProps) {
+  const { title, ...rest } = props;
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      {title ? <title>{title}</title> : null}
+      <path
+        d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+      <path
+        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

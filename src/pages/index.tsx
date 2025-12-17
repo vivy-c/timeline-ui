@@ -66,7 +66,7 @@ export default function HomePage({ initial }: HomePageProps) {
           />
 
           <main className="relative mx-auto flex w-full max-w-[1600px] flex-1 min-h-0 gap-6 overflow-hidden px-4 py-6">
-            <LeftRail collapsed={sidebarCollapsed} />
+            <LeftRail collapsed={sidebarCollapsed} activeLabel="Home" />
             <UniversesCard
               universes={initial.universes}
               selectedId={selectedUniverseId}

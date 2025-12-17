@@ -1,5 +1,7 @@
-import { cn } from "@/lib/cn";
+import Link from "next/link";
 import type { ReactNode, SVGProps } from "react";
+
+import { cn } from "@/lib/cn";
 
 import {
   IconApple,
@@ -16,24 +18,25 @@ import {
 type NavItem = {
   label: string;
   icon: (props: SVGProps<SVGSVGElement>) => ReactNode;
-  active?: boolean;
+  href?: string;
 };
 
 const items: NavItem[] = [
-  { label: "Home", icon: IconPlanet, active: true },
-  { label: "Match", icon: IconHeart },
-  { label: "Messages", icon: IconMessage },
-  { label: "Profile", icon: IconUser },
-  { label: "Personality Database", icon: IconBook },
-  { label: "Personality Tests", icon: IconClipboard },
-  { label: "Resources", icon: IconCompass },
+  { label: "Home", icon: IconPlanet, href: "/" },
+  { label: "Match", icon: IconHeart, href: "#" },
+  { label: "Messages", icon: IconMessage, href: "#" },
+  { label: "Profile", icon: IconUser, href: "/profile" },
+  { label: "Personality Database", icon: IconBook, href: "#" },
+  { label: "Personality Tests", icon: IconClipboard, href: "#" },
+  { label: "Resources", icon: IconCompass, href: "#" },
 ];
 
 type LeftRailProps = {
   collapsed: boolean;
+  activeLabel?: string;
 };
 
-export function LeftRail({ collapsed }: LeftRailProps) {
+export function LeftRail({ collapsed, activeLabel = "Home" }: LeftRailProps) {
   return (
     <aside
       id="primary-sidebar"
@@ -46,11 +49,11 @@ export function LeftRail({ collapsed }: LeftRailProps) {
       <div className="flex h-full min-h-0 flex-col justify-between">
         <nav className="mt-2 space-y-1">
           {items.map((item) => {
-            const active = Boolean(item.active);
+            const active = item.label === activeLabel;
             return (
-              <a
+              <Link
                 key={item.label}
-                href="#"
+                href={item.href ?? "#"}
                 aria-label={item.label}
                 title={collapsed ? item.label : undefined}
                 className={cn(
@@ -75,7 +78,7 @@ export function LeftRail({ collapsed }: LeftRailProps) {
                 <span className={cn("truncate", collapsed && "hidden")}>
                   {item.label}
                 </span>
-              </a>
+              </Link>
             );
           })}
         </nav>
