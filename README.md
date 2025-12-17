@@ -37,7 +37,7 @@ Visit http://localhost:3000. Profile lives at `/profile`, settings at `/settings
 - `npm run lint` – ESLint checks
 
 ## Work log
-- Time: 17 13:00–16:30 GMT+7 (estimate; refer to commit timestamps for precise timing).
+- Time: 17 Dec, 13:00–16:30 GMT+7 (estimate; refer to commit timestamps for precise timing).
 - Completed: home page polish; collapsible left panel; initial Infinity pop-up; notifications pop-up; profile and settings pages.
 - Skipped: tests/extra visual QA.
 - With more time: refine animations, micro-details, and functionality while keeping the current look and feel.
