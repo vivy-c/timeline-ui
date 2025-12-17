@@ -36,7 +36,8 @@ Visit http://localhost:3000. Profile lives at `/profile`, settings at `/settings
 - `npm run start` – run the built app
 - `npm run lint` – ESLint checks
 
-## Customization tips
-- Tweak mock content in `src/server/mock/home.ts` (feed posts, universes, promo) and `src/server/mock/notifications.ts`.
-- Adjust layout/styling via Tailwind classes in the timeline components or the base import in `src/styles/globals.css`.
-- Assets (avatars, mock images) live in `public/`.
+## Work log
+- Time: 17 13:00–16:30 GMT+7 (estimate; refer to commit timestamps for precise timing).
+- Completed: home page polish; collapsible left panel; initial Infinity pop-up; notifications pop-up; profile and settings pages.
+- Skipped: tests/extra visual QA.
+- With more time: refine animations, micro-details, and functionality while keeping the current look and feel.
