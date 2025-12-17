@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Timeline UI (Boo-inspired)
 
-## Getting Started
+Mock social timeline built with the Next.js Pages Router, React, TypeScript, and Tailwind CSS v4. The UI recreates Boo-style surfaces: a home feed, question cards, universes list, promo rail, and premium upsell modal, all driven by mock API routes.
 
-First, run the development server:
+## What’s inside
+- Next.js 16 (Pages Router) + React 19 + TypeScript
+- Tailwind CSS v4 (`@import "tailwindcss";`) with lightweight global styles in `src/styles/globals.css`
+- Reusable UI primitives in `src/components/ui` (`Card`, `Avatar`, `Badge`, `IconButton`)
+- Timeline components in `src/components/timeline` (feed, universes rail, right column promo, notifications slideout, Infinity modal, top bar, icons)
+- Mock data + API routes:
+  - `src/server/mock/home.ts` powers home, profile, and settings pages
+  - `src/server/mock/notifications.ts` powers `/api/notifications`
+  - `src/pages/api/feed.ts` returns sorted “best/new” posts
+- Types in `src/types` and small utilities in `src/lib`
+
+## App tour
+- Home feed (`src/pages/index.tsx`): Question of the Day, comment composer, “best/new” tabs (sorted via `/api/feed`), local like toggles, and a related posts rail with promo countdown.
+- Left rail (`LeftRail`) with collapse toggle and nav to Profile and Settings.
+- Infinity upsell modal (`InfinityModal`) showing plan cards and perks; opens by default with dismiss support.
+- Notifications slideout (`NotificationsModal`) that animates in/out and fetches mock notifications.
+- Profile (`src/pages/profile.tsx`) and Settings (`src/pages/settings.tsx`) pages mirror Boo layout with lifestyle/settings rows and toggles.
+
+## Getting started
+Prereqs: Node 18+ recommended.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000. Profile lives at `/profile`, settings at `/settings`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
+- `npm run dev` – start the dev server
+- `npm run build` – production build
+- `npm run start` – run the built app
+- `npm run lint` – ESLint checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization tips
+- Tweak mock content in `src/server/mock/home.ts` (feed posts, universes, promo) and `src/server/mock/notifications.ts`.
+- Adjust layout/styling via Tailwind classes in the timeline components or the base import in `src/styles/globals.css`.
+- Assets (avatars, mock images) live in `public/`.
