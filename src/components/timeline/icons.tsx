@@ -1,6 +1,7 @@
 import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement> & { title?: string };
+type IconBellProps = IconProps & { filled?: boolean };
 
 export function IconHamburger(props: IconProps) {
   const { title, ...rest } = props;
@@ -47,12 +48,12 @@ export function IconSearch(props: IconProps) {
   );
 }
 
-export function IconBell(props: IconProps) {
-  const { title, ...rest } = props;
+export function IconBell(props: IconBellProps) {
+  const { title, filled, ...rest } = props;
   return (
     <svg
       viewBox="0 0 24 24"
-      fill="none"
+      fill={filled ? "currentColor" : "none"}
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >

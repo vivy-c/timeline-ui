@@ -15,8 +15,8 @@ type RightColumnProps = {
 
 export function RightColumn({ promo, relatedPosts }: RightColumnProps) {
   return (
-    <aside className="hidden w-[420px] shrink-0 2xl:block">
-      <div className="sticky top-[86px] space-y-6">
+    <aside className="hidden h-full min-h-0 w-[420px] shrink-0 2xl:block">
+      <div className="space-y-6">
         <PromoCard promo={promo} />
         <RelatedPosts cards={relatedPosts} />
       </div>
@@ -133,4 +133,3 @@ function RelatedPosts({ cards }: { cards: QuestionCardType[] }) {
     </div>
   );
 }
-

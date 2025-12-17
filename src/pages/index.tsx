@@ -16,6 +16,7 @@ type HomePageProps = {
 };
 
 export default function HomePage({ initial }: HomePageProps) {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [selectedUniverseId, setSelectedUniverseId] = useState(
     initial.universes[0]?.id,
   );
@@ -48,7 +49,7 @@ export default function HomePage({ initial }: HomePageProps) {
         />
       </Head>
 
-      <div className="relative min-h-screen overflow-x-hidden">
+      <div className="relative h-screen overflow-hidden">
         <div
           className={cn(
             "pointer-events-none absolute inset-0",
@@ -57,24 +58,33 @@ export default function HomePage({ initial }: HomePageProps) {
           aria-hidden
         />
 
-        <TopBar viewer={initial.viewer} />
+        <div className="relative flex h-full min-h-0 flex-col">
+          <TopBar
+            viewer={initial.viewer}
+            sidebarCollapsed={sidebarCollapsed}
+            onToggleSidebar={() => setSidebarCollapsed((v) => !v)}
+          />
 
-        <main className="relative mx-auto flex max-w-[1600px] gap-6 px-4 pb-24 pt-6">
-          <LeftRail />
-          <UniversesCard
-            universes={initial.universes}
-            selectedId={selectedUniverseId}
-            onSelect={setSelectedUniverseId}
-          />
-          <FeedColumn
-            questionOfDay={initial.questionOfDay}
-            tab={tab}
-            tabLoading={tabLoading}
-            onTabChange={handleTabChange}
-            posts={posts}
-          />
-          <RightColumn promo={initial.promo} relatedPosts={initial.relatedPosts} />
-        </main>
+          <main className="relative mx-auto flex w-full max-w-[1600px] flex-1 min-h-0 gap-6 overflow-hidden px-4 py-6">
+            <LeftRail collapsed={sidebarCollapsed} />
+            <UniversesCard
+              universes={initial.universes}
+              selectedId={selectedUniverseId}
+              onSelect={setSelectedUniverseId}
+            />
+            <FeedColumn
+              questionOfDay={initial.questionOfDay}
+              tab={tab}
+              tabLoading={tabLoading}
+              onTabChange={handleTabChange}
+              posts={posts}
+            />
+            <RightColumn
+              promo={initial.promo}
+              relatedPosts={initial.relatedPosts}
+            />
+          </main>
+        </div>
       </div>
     </>
   );

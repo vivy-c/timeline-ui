@@ -1,11 +1,9 @@
 import { cn } from "@/lib/cn";
-import type { PropsWithChildren } from "react";
+import type { HTMLAttributes, PropsWithChildren } from "react";
 
-type CardProps = PropsWithChildren<{
-  className?: string;
-}>;
+type CardProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>;
 
-export function Card({ className, children }: CardProps) {
+export function Card({ className, children, ...props }: CardProps) {
   return (
     <div
       className={cn(
@@ -14,9 +12,9 @@ export function Card({ className, children }: CardProps) {
         "shadow-[0_0_0_1px_rgba(255,255,255,0.06),_0_28px_90px_rgba(0,0,0,0.85)]",
         className,
       )}
+      {...props}
     >
       {children}
     </div>
   );
 }
-

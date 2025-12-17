@@ -50,7 +50,7 @@ export function FeedColumn({
   }, [posts, likedIds]);
 
   return (
-    <section className="w-full max-w-[660px] flex-1">
+    <section className="w-full max-w-[660px] flex-1 min-h-0 overflow-y-auto pr-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       <div className="flex items-center justify-between">
         <IconButton
           aria-label="Back"
@@ -115,6 +115,8 @@ export function FeedColumn({
           );
         })}
       </div>
+
+      <div className="h-10" aria-hidden />
     </section>
   );
 }
