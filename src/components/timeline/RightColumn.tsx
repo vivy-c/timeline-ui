@@ -26,15 +26,15 @@ export function RightColumn({ promo, relatedPosts }: RightColumnProps) {
 
 function PromoCard({ promo }: { promo: Promo }) {
   const endsAt = useMemo(() => new Date(promo.countdownEndsAt).getTime(), [promo]);
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState<number | null>(null);
 
   useEffect(() => {
+    setNow(Date.now());
     const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
   }, []);
 
-  const remaining = endsAt - now;
-  const countdown = formatCountdown(remaining);
+  const countdown = now === null ? "--:--:--" : formatCountdown(endsAt - now);
   const progress = clamp01(promo.progress);
 
   return (

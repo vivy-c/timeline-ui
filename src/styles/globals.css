@@ -1,2 +1,13 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .card-glow {
+    --tw-shadow: 0 0 36px rgba(255, 255, 255, 0.16),
+      0 24px 80px rgba(0, 0, 0, 0.8);
+    --tw-shadow-colored: 0 0 36px var(--tw-shadow-color),
+      0 24px 80px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000),
+      var(--tw-shadow);
+  }
+}

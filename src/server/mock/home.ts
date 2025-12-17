@@ -28,13 +28,6 @@ export function getMockUniverses(): Universe[] {
     { id: "culture", hashtag: "culture", souls: 4_200_000 },
     { id: "learning", hashtag: "learning", souls: 4_200_000 },
     { id: "science", hashtag: "science", souls: 3_400_000 },
-    { id: "videos", hashtag: "videos", souls: 3_100_000 },
-    { id: "languages", hashtag: "languages", souls: 2_500_000 },
-    { id: "philosophy", hashtag: "philosophy", souls: 2_400_000 },
-    { id: "sports", hashtag: "sports", souls: 2_000_000 },
-    { id: "relationshipadvice", hashtag: "relationshipadvice", souls: 1_300_000 },
-    { id: "fitness", hashtag: "fitness", souls: 1_100_000 },
-    { id: "fashion", hashtag: "fashion", souls: 749_000 },
   ];
 }
 
